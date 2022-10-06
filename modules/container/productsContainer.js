@@ -18,19 +18,19 @@ class Container {
   }
 
   save(data) {
-    let { nombre, precio, UrlImagen } = data;
+    let { nombre, precio, urlImagen } = data;
 
     precio = parseInt(precio);
 
     if (this.products.length === 0) {
-      this.products = [{ nombre, precio, UrlImagen, id: this.lastId }];
+      this.products = [{ nombre, precio, urlImagen, id: this.lastId }];
 
       return this.lastId;
     } else {
       this.lastId = this.products[this.products.length - 1].id + 1;
       this.products = [
         ...this.products,
-        { nombre, precio, UrlImagen, id: this.lastId },
+        { nombre, precio, urlImagen, id: this.lastId },
       ];
 
       return this.lastId;
